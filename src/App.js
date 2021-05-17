@@ -2,6 +2,7 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import login from './Login.png';
 import React,{useState} from 'react';
+import swal from 'sweetalert';
 
 function App() {
   const [user,setUser] = useState('');
@@ -9,9 +10,9 @@ function App() {
   const handleValidate = (e) => {
     e.preventDefault();
     if(user == 'saiftest@gmail.com' && password == '123456'){
-      alert('Login successfull');
+      swal('Login successfull','Welcome to react','success');
     }else{
-      alert('Wrong credential');
+      swal('Wrong credential','Please try again','error');
     }
   }
   return (
